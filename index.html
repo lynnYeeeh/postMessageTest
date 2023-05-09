@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>123</h1>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<h1>123</h1>
+<script>
+window.addEventListener('message', function(e) {
+	//務必檢查呼叫來源，只開放特定網域呼叫，以免被惡意利用
+	if (e.origin !== 'http://localhost') 
+		return;
+	console.log(e.data);
+
+});
+</script>
+</body>
 </html>
